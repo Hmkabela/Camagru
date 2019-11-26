@@ -14,7 +14,8 @@
 
 <?php
 	$user_name = $_POST['username'];
-	$passwd = $_POST['pwd'];
+	$pa = $_POST['pwd'];
+	$passwd = md5($pa);
 	try
 	{
 		include_once("config/database.php");

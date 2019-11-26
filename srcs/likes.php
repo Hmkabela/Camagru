@@ -27,11 +27,8 @@ try
 		$subject = "Image Was Liked!!!";
                                 $h  = "From : noreply@camagru.org" . "\r\n";
 								$h .= "Content-type: text/html";
-                                $body = "Greetings $formail[3] $formail;[4]<br>
+                                $body = "Greetings $formail[3] $formail[4];<br>
                                 $formail2[0] just liked something you posted<br>
-                                ------------------------<br>
-                                <img src=$mp/></body></html><br>
-                                ------------------------<br>
                                 Regards: The Camagru Team!!!";
 	}
 	mail($formail[2], $subject, $body, $h);

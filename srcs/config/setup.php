@@ -1,7 +1,7 @@
 <?php
 $server = "localhost";
 $usr = "root";
-$passwd = "";
+$passwd = "hmkabela";
 
 try 
 {
@@ -50,7 +50,7 @@ try
 	echo "Table likes created successfully<br>";
 	$t5 = "CREATE TABLE camagrudb.comments(
 	mediapath		text,
-	verhahs_owner	text,
+	verhash_owner	text,
 	comments		text,
 	comment_date	datetime,
 	verhash_com		text

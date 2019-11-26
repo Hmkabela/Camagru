@@ -12,7 +12,6 @@ try
 	$s3->execute(['verhash' => $u,'mediapath' => $mp]);
 	$s4 = $conn->prepare('delete FROM comments WHERE verhash_owner = :verhash_owner AND  mediapath = :mediapath');
 	$s4->execute(['verhash_owner' => $u,'mediapath' => $mp]);
-	unlink($mp);
 	header("Location:profile.php?u=$u");
 	}
 	catch(PDOException $e)

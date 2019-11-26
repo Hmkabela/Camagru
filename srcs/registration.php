@@ -3,19 +3,19 @@
 ?>
 <html>
 	<form action="registration.php" method= "POST">
-		Username </br> <input type= "text" name= "username"></br>
+<center>Username </br> <input type= "text" name= "username"></br>
 		Password </br> <input type= "password" name= "pwd1"></br>
 		Re-enter Password </br> <input type= "password" name= "pwd2"></br>
 		Email </br> <input type= "text" name= "email"></br>
 		First Name </br> <input type= "text" name= "fname"></br>
 		Last Name </br> <input type= "text" name= "lname"></br>
 		<input type= "submit" value= "Register">
-	</form>
+</center>	</form>
 </html>
-
+<center>
 <?php
 	$server = "localhost";
-$db = "camagrudb";
+	$db = "camagrudb";
 	$usr = "root";
 	$pwd = "hmkabela";
 	$user_name = $_POST['username'];
@@ -40,13 +40,17 @@ $db = "camagrudb";
 					$emailAdd = filter_var($emailAdd, FILTER_SANITIZE_EMAIL);
 					if (filter_var($emailAdd, FILTER_VALIDATE_EMAIL))
 					{
-						if ($passwd == $_POST['pwd2'])
+						if((preg_match('/[a-zA-Z]/',$passwd) && (preg_match('/[a-zA-Z]/',$_POST['pwd2']))) && (preg_match('/\d/',$passwd) && preg_match('/\d/',$_POST['pwd2'])))
 						{
-							if (strlen($passwd) < 8)
-								echo "Password should be at least 8 characters long!!<br>";
-							else
+							if ($passwd == $_POST['pwd2'])
 							{
+								if (strlen($passwd) < 8)
+									echo "Password should be at least 8 characters long!!<br>";
+								else
+								{
+									$pa = md5($passwd);
 									$p = $user_name . $emailAdd;
+									$p = str_shuffle($p);
 									$hash = md5($p);
 									$subject = "Camagru Registration!!!";
 									$h  = "From : noreply@camagru.org" . "\r\n";
@@ -65,17 +69,20 @@ $db = "camagrudb";
 									$d = date("Y-m-d");
 									$sql = 'insert into users(username, passwd, email, fname, lname, joindate,verhash,dp) VALUES(?, ?, ?, ?, ?, ?, ?,?)';
 									$stmt = $conn->prepare($sql);
-									$stmt->execute([$user_name,$passwd,$emailAdd,$f_name,$l_name, $d, $hash, $ddp]);
+									$stmt->execute([$user_name,$pa,$emailAdd,$f_name,$l_name, $d, $hash, $ddp]);
 									if(mail($emailAdd, $subject, $body, $h))
 										echo    'Verify Your Account On The Email You Have Received';
 									else
 										echo "Email could not be sent!!";
+								}
+							}
+							else
+							{
+								echo	"Passwords do not match!!! \n";
 							}
 						}
 						else
-						{
-							echo	"Passwords do not match!!! \n";
-						}
+							echo "Password Must Contain UPPERCASE, LOWERCASE AND DIGIT!!!";
 					}
 					else
 						echo "Email Address is invalid";
@@ -94,4 +101,4 @@ $db = "camagrudb";
 		echo "An Error Occured!!!";
 	}
 	$conn = null;
-?>
+?></center>
