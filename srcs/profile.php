@@ -55,7 +55,7 @@
 	$i = 0;
 	while($i < $a)
 	{
-		echo '<center><a href= edits.php?u='.$u.'&mp='.$med[$i][2].'><img src="'.$med[$i][2].'" /></a>' . "<br><div>";
+		echo '<center><img src="'.$med[$i][2].'" />' . "<br><div>";
 		if($z[$i] == '1')
 		{
 			echo '<a href= unlikes.php?u='.$u.'&mp='.$med[$i][2].'&o='.$med[$i][1].'&fn='.$f[3].'><img height = 50px width = 50px style = display:inline-block; margin-right:5px; src= media/likes/liked.png /></a>';

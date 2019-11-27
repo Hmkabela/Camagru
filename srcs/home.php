@@ -33,7 +33,7 @@
 	while($i < $a)
 	{
 		echo '<center><b>' . strtoupper($names[$i]). '</b>' . '<br>';
-		echo '<a href= preview.php?u='.$u.'&mp='.$med[$i][2].'><img src="'.$med[$i][2].'" /></a>' . "<br>";
+		echo '<img src="'.$med[$i][2].'" />' . "<br>";
 		echo '<div>';
 		echo '<a href= unlikes.php?u='.$u.'&mp='.$med[$i][2].'&o='.$med[$i][0].'&fn='.$f[3].'><img height = 50px width = 50px style = display:inline-block; margin-right:5px; src= media/likes/liked.png /></a>';
 		echo '<a href= preview.php?u='.$u.'&mp='.$med[$i][2].'&o='.$med[$i][0].'><img  height = 50px width = 50px style = display:inline-block; margin-right:5px; src="media/likes/com.png" /></a>'. " <br><br>";

@@ -20,7 +20,7 @@
 				$dat = $stm->fetch();
 				if ($dat[2] == $e)
 				{
-					$subject = "Camagru Password Change Request!!!";
+					$subject = "Camagru Forgot Password!!!";
 					$h  = "From : noreply@camagru.org" . "\r\n";
 					$h .= 'MIME-Version: 1.0' . "\r\n";
 					$h .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";

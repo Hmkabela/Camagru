@@ -22,7 +22,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 .column 
 {
-	width: 50%;
+	width: 33%;
 	padding: 5px;
 	position: absolute;
 	margin-top: 200px;
@@ -54,7 +54,7 @@ img {
   color: white;
   text-decoration: none;
   font-size: 17px;
-  width: 25%;
+  width: 33%;
   text-align: center;
 }
 
@@ -66,7 +66,7 @@ img {
 .navbar a.n {
   background-color: #4CAF50;
 }
-.b
+#b
 			{
 				float: right;
 				width:100;
@@ -89,7 +89,6 @@ img {
 	<h1 align="center"> CAMAGRU </h1>
 	<nav class="navbar">
 		<a href="home.php?u=<?php echo $u?>">HOME</a>
-		<a href="search.php?u=<?php echo $u?>">SEARCH</a>
 		<a href="explore.php?u=<?php echo $u?>">EXPLORE</a>
 		<a href="profile.php?u=<?php echo $u?>">MY PROFILE</a>
 	</nav>

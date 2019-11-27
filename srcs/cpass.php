@@ -18,7 +18,7 @@
 				$p1 = $_POST['p1'];
 				$p2 = $_POST['p2'];
 				if ($p1 == $p2)
-					header("Location:fpass.php?e=$e&p=$p1");
+					header("Location:pass_up.php?u=$e&e=$p1");
 				else
 					echo "Passwords do not match!!!";
 			}
