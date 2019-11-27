@@ -30,11 +30,11 @@
 		echo '<img src="'.$med[$i][2].'" />' . "<br>";
 		if($z[$i] == '1')
 		{
-			echo '<a href= unlikes.php?u='.$u.'&mp='.$med[$i][2].'&o='.$med[$i][1].'&fn='.$f[3].'><img height = 50px width = 50px style = display:inline-block; margin-right:5px; src= media/likes/liked.png /></a>';
+			echo '<center><a href= unlikes.php?u='.$u.'&mp='.$med[$i][2].'&o='.$med[$i][1].'&fn='.$f[3].'><img height = 50px width = 50px style = display:inline-block; margin-right:5px; src= media/likes/liked.png /></a>';
 		}
 		else
 		{
-			echo '<a href= likes.php?u='.$u.'&mp='.$med[$i][2].'&o='.$med[$i][1].'&fn='.$f[3].'><img  height = 50px width = 50px style = display:inline-block; margin-right:5px; src="media/likes/unliked.png" /></a>';
+			echo '<center><a href= likes.php?u='.$u.'&mp='.$med[$i][2].'&o='.$med[$i][1].'&fn='.$f[3].'><img  height = 50px width = 50px style = display:inline-block; margin-right:5px; src= media/likes/unliked.png /></a>';
 		}
 		echo '<a href= preview.php?u='.$u.'&mp='.$med[$i][2].'&o='.$med[$i][1].'><img  height = 50px width = 50px style = display:inline-block; margin-right:5px; src="media/likes/com.png" /></a>'. " <br>";
 		echo    $med[$i][3] . "<br>";

@@ -10,6 +10,9 @@ else{
 	$s = str_shuffle(substr($u,16));
 	$ss = str_shuffle($s);
 	$d = str_shuffle(date("Y-m-d"));
+	$d2 = date("Y-m-d H:i:s");
+	//$ss = $_GET['ss'];
+	//$d = $_GET['d'];
     $upload_dir = "media/uploads/";
     $img = $_POST['img'];
     $img = str_replace('data:image/png;base64,', '', $img);
@@ -21,7 +24,7 @@ else{
 	{
         $sql = 'insert into media(verhash, mediapath, postdate,caption, filter) VALUES(?, ?, ?,?,?)';
 		$stmt = $conn->prepare($sql);
-        $stmt->execute([$u,$file, $d,$cap,$cap]);
+        $stmt->execute([$u,$file, $d2,$cap,$cap]);
 		$sql2 = 'insert into likes(verhash_owner, mediapath) VALUES(?,?)';
 		$stmt2 = $conn->prepare($sql2);
 		$stmt2->execute([$u, $f]);

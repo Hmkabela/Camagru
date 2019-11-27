@@ -2,22 +2,27 @@
 	include_once("head2.php");
 ?>
 <html>
+	<style>
+		div.a
+		{
+ 			text-align: center;
+		}
+	</style>
 	<form action="registration.php" method= "POST">
-<center>Username </br> <input type= "text" name= "username"></br>
+	<div class="a">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		Username </br> <input type= "text" name= "username"></br>
 		Password </br> <input type= "password" name= "pwd1"></br>
 		Re-enter Password </br> <input type= "password" name= "pwd2"></br>
 		Email </br> <input type= "text" name= "email"></br>
 		First Name </br> <input type= "text" name= "fname"></br>
 		Last Name </br> <input type= "text" name= "lname"></br>
 		<input type= "submit" value= "Register">
-</center>	</form>
+	</div>
+	</form>
 </html>
 <center>
 <?php
-	$server = "localhost";
-	$db = "camagrudb";
-	$usr = "root";
-	$pwd = "hmkabela";
 	$user_name = $_POST['username'];
 	$passwd = $_POST['pwd1'];
 	$emailAdd = $_POST['email'];
@@ -26,8 +31,7 @@
 	$ddp = "media/dps/default.jpg";
 	try
 	{
-		$conn = new PDO("mysql:host=$server;dbname=$db", $usr, $pwd);
-		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		include_once("config/database.php");
 		if (!empty($_POST['username']) && !empty($_POST['pwd1']) && !empty($_POST['pwd2']) && !empty($_POST['email']) && !empty($_POST['fname']) && !empty($_POST['lname']))
 		{
 			if (isset($_POST['username']) && isset($_POST['pwd1']) && isset($_POST['pwd2']) && isset($_POST['email']) && isset($_POST['fname']) && isset($_POST['lname']))

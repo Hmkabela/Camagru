@@ -1,31 +1,26 @@
 <?php
 	include_once("head.php");
 	$u = $_GET['u'];
+	//$s = str_shuffle(substr($u,16));
+	//$ss = str_shuffle($s);
+	//$d = str_shuffle(date("Y-m-d"));
 ?>
 <html>
 	<body>
-		<!--<center><div class = "video-wrap">
-			<video id = "video" playsinline autoplay style = display:inline-block; margin-right:5px;></video>
-		</div>
-		<div class = "controller">
-			<button id = "snap" style = display:inline-block; margin-right:5px;>CAPTURE</button>
-		</div>
-		<canvas id = "canvas" width = "720" height = "720" style = display:inline-block; margin-right:5px;> </canvas></center>-->
 		<div style="text-align:center">
 			<div>
-				<div style="display:inline-block; margin-right:5px; margin-bottom: 15px">
-					<img id="crazy"  src="stickers/crazy.png" alt="crazy" width=100 height=100>
-					<img id="crying" src="stickers/crying_kim.png" alt="crying" width=100 height=100>
-					<img id="sharp" src="stickers/sharp.png" alt="sharp" width=100 height=100>
-					<img id="un" src="stickers/un.png" alt="un" width=100 height=100>
+				<div>
+					<img id="crazy" style = "display:inline-block; margin-right:5px;" src="stickers/crazy.png" alt="crazy" width=100 height=100>
+					<img id="crying" style = "display:inline-block; margin-right:5px;" src="stickers/crying_kim.png" alt="crying" width=100 height=100>
+					<img id="sharp" style = "display:inline-block; margin-right:5px;" src="stickers/sharp.png" alt="sharp" width=100 height=100>
+					<img id="un" style = "display:inline-block; margin-right:5px;" src="stickers/un.png" alt="un" width=100 height=100>
 				</div>
-
-
 				<div style="margin-bottom: 15px">
 					<video id="video" autoplay></video><br/>
 				</div>
 				<div style="margin-bottom: 15px">
 					<button class="btn profile_buttons outline" id="snap">Capture</button>
+					<br>
 					<select id="stickers" style="font-size: 20px;height: 40px;">
 						<option value="none">none</option>
 						<option value="crazy">Crazy</option>
@@ -33,6 +28,7 @@
 						<option value="sharp">Sharp</option>
 						<option value="un">Kim Jon Un</option>
 					</select>
+					<br>
 					<button class="btn profile_buttons outline" id="apply">Apply</button>
 					<button class="btn profile_buttons blue" id="save" name="img">Upload</button>
 				</div>
@@ -46,11 +42,11 @@
 		<div>
 	</div> 
 	<script>
+		
 		const video = document.getElementById('video');
 		const canvas = document.getElementById('edit');
 		const snap = document.getElementById('snap');
 		const apply = document.getElementById('apply');
-		// const apply = document.getElementById('apply');
 		const crazy = document.getElementById('crazy');
 		const crying = document.getElementById('crying');
 		const sharp = document.getElementById('sharp');
@@ -102,45 +98,6 @@
 			xhttp.send(data);
 
 		});
-
-
-
-
-
-
-	/*'use strict';
-	const video = document.getElementById('video');
-	const canvas = document.getElementById('canvas');
-	const snap = document.getElementById('snap');
-	const errorMsgElement = document.getElementById('spanErrorMsg');
-
-	const constraints = {
-		audio :true,
-		video : {width : 550, height : 550}
-						};
-	async function init()
-	{
-		try
-		{
-			const stream = await navigator.mediaDevices.getUserMedia(constraints);
-			handleSuccess(stream);
-		}
-		catch(e)
-		{
-			errorMsgElement.innerHTML = 'navigator.getUserMedia.error:${e.toString()}';
-		}
-	}
-		function handleSuccess(stream)
-		{
-			window.stream = stream;
-			video.srcObject = stream;
-		}
-		init();
-		var context = canvas.getContext('2d');
-		snap.addEventListener("click", function()
-		{
-			context.drawImage(video, 0, 0, 420, 420);
-		});*/
 	</script>
 	</body>
 </html>

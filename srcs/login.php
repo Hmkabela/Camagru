@@ -3,6 +3,7 @@
 ?>
 <html>
 <center>	<form action="login.php" method= "POST">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 		Username </br> <input type= "text" name= "username"></br>
 		Password </br> <input type= "password" name= "pwd"></br>
 		<input type= "submit" value= "login"><br>

@@ -2,10 +2,10 @@
 	$u = $_GET['u'];
 	$n = $_GET['n'];
 	include_once('head.php');
-	echo  "<a href=cusername.php?u=$u>Change Username</a>	";
+	echo  "<center><a href=cusername.php?u=$u>Change Username</a>	";
 	echo  "<a href=cpassword.php?u=$u>Change Password</a>	";
-	echo  "<a href=cemail.php?u=$u>Change Email Address</a>	";
-	echo  "Notifications";
+	echo  "<a href=cemail.php?u=$u>Change Email Address</a><br>	";
+	echo  "Notifications<br>";
 	if ($n == 0)
 	{
 		$noti1 = "";
@@ -20,6 +20,7 @@
 <html>
 	<button id="on" <?php echo $noti1;?> onclick="on()">ON</button>
 	<button id="off" <?php echo $noti2;?> onclick="off()">OFF</button>
+	<center>
 	<script>
 		function on()
 		{
