@@ -89,7 +89,7 @@ img {
 	<h1 align="center"> CAMAGRU </h1>
 	<nav class="navbar">
 		<a href="home.php?u=<?php echo $u?>">HOME</a>
-		<a href="explore.php?u=<?php echo $u?>">EXPLORE</a>
+		<a href="explore.php?u=<?php echo $u?>&c=0">EXPLORE</a>
 		<a href="profile.php?u=<?php echo $u?>">MY PROFILE</a>
 	</nav>
 	</div>

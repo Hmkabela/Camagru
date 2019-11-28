@@ -1,5 +1,6 @@
 <?php
 	include_once('head.php');
+	$limit = 5;
 	$stmt = $conn->prepare('SELECT * FROM media ORDER BY postdate desc');
 	$stmt->execute();
 	$med = $stmt->fetchAll();
@@ -11,6 +12,7 @@
 	$i2 = 0;
 	$a = count($med);
 	$f = explode('/',$_SERVER['PHP_SELF']);
+	$c = $_GET['c'];
 	while ($i < $a)
 	{
 		while($i2 < count($med2))
@@ -25,20 +27,25 @@
 		$i2 = 0;
 	}
 	$i = 0;
-	while($i < $a)
+	while($i < $limit && $c < $a)
 	{
-		echo '<img src="'.$med[$i][2].'" />' . "<br>";
-		if($z[$i] == '1')
+		echo '<img src="'.$med[$c][2].'" />' . "<br>";
+		if($z[$c] == '1')
 		{
-			echo '<center><a href= unlikes.php?u='.$u.'&mp='.$med[$i][2].'&o='.$med[$i][1].'&fn='.$f[3].'><img height = 50px width = 50px style = display:inline-block; margin-right:5px; src= media/likes/liked.png /></a>';
+			echo '<center><a href= unlikesexp.php?u='.$u.'&mp='.$med[$c][2].'&o='.$med[$c][1].'&fn='.$f[3].'&c='. $c .'><img height = 50px width = 50px style = display:inline-block; margin-right:5px; src= media/likes/liked.png /></a>';
 		}
 		else
 		{
-			echo '<center><a href= likes.php?u='.$u.'&mp='.$med[$i][2].'&o='.$med[$i][1].'&fn='.$f[3].'><img  height = 50px width = 50px style = display:inline-block; margin-right:5px; src= media/likes/unliked.png /></a>';
+			echo '<center><a href= likesexp.php?u='.$u.'&mp='.$med[$c][2].'&o='.$med[$c][1].'&fn='.$f[3].'&c='. $c .'><img  height = 50px width = 50px style = display:inline-block; margin-right:5px; src= media/likes/unliked.png /></a>';
 		}
-		echo '<a href= preview.php?u='.$u.'&mp='.$med[$i][2].'&o='.$med[$i][1].'><img  height = 50px width = 50px style = display:inline-block; margin-right:5px; src="media/likes/com.png" /></a>'. " <br>";
-		echo    $med[$i][3] . "<br>";
-		echo    $med[$i][5] . "</center><br><br>";
+		echo '<a href= preview.php?u='.$u.'&mp='.$med[$c][2].'&o='.$med[$c][1].'><img  height = 50px width = 50px style = display:inline-block; margin-right:5px; src="media/likes/com.png" /></a>'. " <br>";
+		echo    $med[$c][3] . "<br>";
+		echo    $med[$c][5] . "</center><br><br>";
 		$i++;
+		$c++;
 	}
+	$cb = ($c - 10 <= 0) ? 0 : $c - 10;
+	$cf = ($c + 5 > $a) ? $a - 5 : $c;
+	echo "<a href= explore.php?u=$u&c=$cb>PREV</a><br>";
+	echo "<a href= explore.php?u=$u&c=$cf>NEXT</a><br>";
 ?>

@@ -54,6 +54,7 @@
 	$i = 0;
 	$i2 = 0;
 	$a = count($coms);
+	$i3 = 0;
 	$names = array_fill(0, $a, '0');
 	while ($i < $a)
 	{
@@ -61,7 +62,8 @@
 		{
 			if ($coms[$i][4] == $dat[$i2][7])
 			{
-				$names[$i] = $dat[$i2][0];
+				$names[$i3] = $dat[$i2][0];
+				$i3++;
 				break;
 			}
 			$i2++;
