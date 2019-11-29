@@ -1,9 +1,6 @@
 <?php
 	include_once("head.php");
 	$u = $_GET['u'];
-	//$s = str_shuffle(substr($u,16));
-	//$ss = str_shuffle($s);
-	//$d = str_shuffle(date("Y-m-d"));
 ?>
 <html>
 	<body>

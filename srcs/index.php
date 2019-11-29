@@ -3,12 +3,11 @@
 ?>
 <script>
 	window.onload = function(){
-	document.getElementById("b").style.display = "none";
- }
-</script>
+	document.getElementById("but").style.display = "none";
+	}
+	</script>
 <html>
-<center>	<form action="login.php" method= "POST">
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<center>	<form action="index.php" method= "POST">
 		Username </br> <input type= "text" name= "username"></br>
 		Password </br> <input type= "password" name= "pwd"></br>
 		<input type= "submit" value= "login"><br>

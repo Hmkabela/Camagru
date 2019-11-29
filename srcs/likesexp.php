@@ -28,11 +28,11 @@ try
 		$subject = "Image Was Liked!!!";
                                 $h  = "From : noreply@camagru.org" . "\r\n";
 								$h .= "Content-type: text/html";
-                                $body = "Greetings $formail[3] $formail[4];<br>
-                                $formail2[0] just liked something you posted<br>
+                                $body = "Greetings $formail2[3] $formail2[4];<br>
+                                $formail[0] just liked something you posted<br>
                                 Regards: The Camagru Team!!!";
 	}
-	mail($formail[2], $subject, $body, $h);
+	mail($formail2[2], $subject, $body, $h);
 	header("Location:$f?u=$u&c=$c");
 	}
 	catch(PDOException $e)

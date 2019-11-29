@@ -13,6 +13,11 @@
 	$a = count($med);
 	$f = explode('/',$_SERVER['PHP_SELF']);
 	$c = $_GET['c'];
+	if ($a == 0)
+	{
+		echo "No pictures yet. Be the first in the community to post something!! :)";
+		die();
+	}
 	while ($i < $a)
 	{
 		while($i2 < count($med2))

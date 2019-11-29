@@ -8,7 +8,7 @@
 		$a = count($med);
 		while($i < $a)
         {
-                echo '<a href= login.php><img src="'.$med[$i][2].'" /></a>' . "<br>";
+                echo '<a href= index.php><img src="'.$med[$i][2].'" /></a>' . "<br>";
 				$i++;
 		}
 ?>

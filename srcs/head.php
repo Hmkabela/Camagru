@@ -10,7 +10,7 @@
 	}
 	else
 	{
-		header('Location:login.php');
+		header('Location:index.php');
 	}
 ?>
 
@@ -95,13 +95,13 @@ img {
 	</div>
 	<img id = "dp" src="<?php echo $data[8]; ?>"  height= "200px" width = "200px">
 	<a href="noti.php?u=<?php echo $u?>"><img src="settings.png" width="100" height="100"></a>
-	<button id= "b"type="button" onclick="bye()" formaction="login.php">LOG OUT</button>
+	<button id= "b" type="button" onclick="bye()" formaction="index.php">LOG OUT</button>
 	<h1> <?php echo strtoupper($data[0]);?> </h1>
 	<script>
 		function bye()
 		{
 			alert('Goodbye <?php echo $data[0]; ?> :(\nCome Back Soon!!');
-			window.location.href = "login.php";
+			window.location.href = "index.php";
 		}
 	</script>
 </body>

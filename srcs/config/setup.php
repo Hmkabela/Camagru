@@ -1,12 +1,7 @@
 <?php
-$server = "localhost";
-$usr = "root";
-$passwd = "hmkabela";
-
+include_once("database.php");
 try 
 {
-	$conn = new PDO("mysql:host=$server", $usr, $passwd);
-	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$sql = "CREATE DATABASE camagrudb";
 	$conn->exec($sql);
 	echo "Database created successfully<br>";

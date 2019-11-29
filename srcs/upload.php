@@ -2,7 +2,7 @@
 include_once("head.php");
 if(!isset($_GET['u']))
 {
-    header("Location: login.php");
+    header("Location: index.php");
 }
 else{
 	$u = $_GET['u'];

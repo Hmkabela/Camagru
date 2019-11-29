@@ -30,11 +30,11 @@ button
         </div>
         <div>
         <h1 align="center"> CAMAGRU </h1>
-		<button type="button" onclick="log()">LOG IN</button>
+		<button type="button" id= "but" onclick="log()">LOG IN</button>
 		<script>
 			function log()
 			{
-				window.location.href = "login.php";
+				window.location.href = "index.php";
 			}
 		</script>
 </body>

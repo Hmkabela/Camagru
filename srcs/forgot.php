@@ -1,3 +1,7 @@
+<?php
+	include_once("head2.php");
+?>
+<center>
 <html>
 <form action="forgot.php" method= "POST">
 		<br>
@@ -47,3 +51,4 @@
 		echo $e;
 	}
 ?>
+<center>

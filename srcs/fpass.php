@@ -9,7 +9,7 @@ try
 	$st->execute(['passwd' => $p1, 'email' => $e]);
 	echo	"update successful!!!";
 	$i = 0;
-	header("Location: login.php");
+	header("Location: index.php");
 }
 catch (PDOException $e)
 {

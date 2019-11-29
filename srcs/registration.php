@@ -23,11 +23,11 @@
 </html>
 <center>
 <?php
-	$user_name = $_POST['username'];
-	$passwd = $_POST['pwd1'];
-	$emailAdd = $_POST['email'];
-	$f_name = $_POST['fname'];
-	$l_name = $_POST['lname'];
+	$user_name = trim($_POST['username']);
+	$passwd = trim($_POST['pwd1']);
+	$emailAdd = trim($_POST['email']);
+	$f_name = trim($_POST['fname']);
+	$l_name = trim($_POST['lname']);
 	$ddp = "media/dps/default.jpg";
 	try
 	{
@@ -36,6 +36,16 @@
 		{
 			if (isset($_POST['username']) && isset($_POST['pwd1']) && isset($_POST['pwd2']) && isset($_POST['email']) && isset($_POST['fname']) && isset($_POST['lname']))
 			{
+				if(!preg_match('/[a-zA-Z]/',$user_name) || !(preg_match('/\d/',$user_name)))
+				{
+					echo "Username contains only alphabets AND/OR digits only";
+					die();
+				}
+				if(!preg_match('/[a-zA-Z]/',$f_name) && !preg_match('/[a-zA-Z]/',$l_name))
+				{
+					echo "Name And Surname Should contain only Alphabets";
+					die();
+				}
 				$stmt = $conn->prepare('SELECT username, email FROM users WHERE username = :username OR email = :email');
 				$stmt->execute(['username' => $user_name, 'email' => $emailAdd]);
 				$data = $stmt->fetch();

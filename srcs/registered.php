@@ -1,11 +1,6 @@
 <?php
 	include_once("head2.php");
 ?>
-<html>
-	<a href="http://localhost:8080/Camagru/srcs/login.php">Log In</a>;
-	<br>
-</html>
-
 <?php
 	$h = $_GET['q'];
 	$ver = "1";

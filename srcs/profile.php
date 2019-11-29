@@ -2,7 +2,7 @@
 	$u = $_GET['u'];
 	include_once('head.php');
 	if (!$u)
-		header('Location:login.php');
+		header('Location:index.php');
 ?>
 <html>
 	<head>
