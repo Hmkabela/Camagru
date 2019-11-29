@@ -59,7 +59,7 @@ try
 }
 catch(PDOException $e)
     {
-    echo $e;
+    echo "DATABASE ALREADY EXISTS!!!";
     }
 
 $conn = null;
