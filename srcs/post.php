@@ -6,9 +6,13 @@
 	<input type = "submit" value = "Post">
 </form>
 <?php
+	function sanitize($dirty)
+	{
+		return htmlentities($dirty, ENT_QUOTES, 'UTF-8');
+	}
+	$cap = sanitize($_POST['cap']);
 	$name = $_FILES['file']['name'];
 	$type = $_FILES['file']['type'];
-	$cap = $_POST['cap'];
 	$tmp_name = $_FILES['file']['tmp_name'];
 	$ext = array("jpeg", "jpg", "gif", "png", "avi", "wmv", "mov", "qt", "mkv", "mp4", "flv", "swf");
 	$n = explode('.',$name);

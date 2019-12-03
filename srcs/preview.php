@@ -13,7 +13,11 @@
 	<input type = "submit" value = "Post">
 </form>
 <?php
-	$com = $_POST['com'];
+	function sanitize($dirty)
+	{
+		return htmlentities($dirty, ENT_QUOTES, 'UTF-8');
+	}
+	$com = sanitize($_POST['com']);
 	if (isset($com))
 	{
 		if (!empty($com))

@@ -29,7 +29,7 @@
 								$subject = "Your Media Was Commented On!!!";
                                 $h  = "From : noreply@camagru.org" . "\r\n";
 								$h .= "Content-type: text/html";
-                                $body = "Greetings $formail[3] $formail;[4]<br>
+                                $body = "Greetings $formail[3] $formail[4];<br>
                                 $formail2[0] just commented on something you posted<br>
                                 ------------------------<br>
                                 <img src=$mp/></body></html><br>
